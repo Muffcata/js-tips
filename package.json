@@ -2,20 +2,20 @@
   "name": "Replays-js",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://Muffcata.github.io/Replays-js",
+  "homepage": "https://Muffcata.github.io/js-tips",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /Replays-js/"
+    "build": "parcel build src/*.html --public-url /js-tips/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Muffcata/Replays-js.git"
+    "url": "git+https://github.com/Muffcata/js-tips.git"
   },
   "keywords": [],
   "author": "Marta Dąbrowska <mdabrowskadev@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Muffcata/Replays-js/issues"
+    "url": "https://github.com/Muffcata/js-tips/issues"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0"
