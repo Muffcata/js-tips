@@ -159,3 +159,49 @@ const getFibb = function (n) {
   }
 };
 console.log(getFibb(5));
+
+const getFibbNElem = function (n, log = true) {
+  if (n <= 1) return 1;
+  console.log(`n=${n}; fibb(n-1)=${getFibbNElem(n - 1, false)};
+fibb(n-2)=${(getFibbNElem(n - 2), false)}}`);
+  return getFibbNElem(n - 1, log) + getFibbNElem(n - 2, log);
+};
+
+console.log(getFibbNElem(5));
+
+//factorial
+
+//4! => 1*2*3*4 =>24
+
+function factorial(n) {
+  if (n === 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
+console.log(factorial(4));
+
+//4* factorial(3)
+//factorial z 3=3* factorial(2)
+//factorial z 2 =2*factorial(1)
+//factorial z 1 =1*factorial(0)
+//factorial z 0=1//break warunek graniczny
+
+//arr
+
+const arr = [1, 2, 3, 4, 5];
+let added = 0;
+
+function add(arr) {
+  if (arr.length > 0) {
+    //table has not got elem
+    added += arr[arr.length - 1]; //to 0 add last elem on the table
+    arr.pop(); //remove last elem
+
+    add(arr); //call the func repeat
+  }
+}
+
+add(arr);
