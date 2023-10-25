@@ -191,11 +191,14 @@ console.log(homies);
 changeAllRating(homies);
 
 //common elements
-function getCommonElement(arr5, arr6) {}
+function getCommonElement(arr5, arr6) {
+  const arr9 = new Set(arr5.inclues);
+}
 const arr5 = [1, 2, 3];
 const arr6 = [3, 4, 5];
 
 console.log(getCommonElement(arr5, arr6)); //=>[3]
+
 //new Set()
 
 const arr8 = [1, 2, 3, 4, 5];
