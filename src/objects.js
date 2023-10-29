@@ -205,3 +205,125 @@ const arr8 = [1, 2, 3, 4, 5];
 const b = new Set(arr8);
 
 console.log([...b]);
+
+//commonElements
+const arr10 = ['Marta', 'Darek', 'Michael'];
+const arr11 = ['Marta', 'Kamil', 'Michael'];
+
+const elCommon = arr10.filter(function (el) {
+  return arr11.includes(el);
+});
+
+console.log(elCommon);
+
+//spread
+
+const temps = [14, 2, 10, 5];
+console.log(...temps);
+
+console.log(Math.max(...temps));
+
+//spread arrays reference shallow copy
+
+const arr14 = [1, 2, 3];
+const arr15 = [...arr14];
+
+arr15.push(4);
+console.log(arr14);
+
+//spread objects
+
+const first = { propA: 5, propB: 10 };
+const second = { propC: 15 };
+
+const third = { ...first, ...second };
+
+console.log(third);
+
+//rest multiply example
+
+function multiply3(...args) {
+  console.log(args);
+  let total = 1;
+  for (let i = 0; i < args.length; i++) {
+    total *= args[i];
+  }
+  console.log(total);
+}
+multiply3();
+multiply3(1);
+multiply3(1, 2, 3, 4, 5);
+
+//rest advantage over arguments
+function addMoney(currencySymbol, ...amounts) {
+  const totas = amounts.reduce(function (acc, el) {
+    return acc + el;
+  }, 0);
+  console.log(`${currencySymbol}${totas}`);
+}
+
+addMoney('$', 15, 25, 12);
+
+//destructuration
+
+const cats = {
+  name: 'Muff',
+  surname: 'Dabrowski',
+  adress: ['home'],
+};
+const { name, surname } = cats;
+
+const message = `
+This cat has a name of ${name} and surname ${surname}
+`;
+console.log(message);
+
+//desctructarion nested
+
+const { adress } = cats;
+adress.push('room'); //reference
+console.log(adress);
+
+//nested destructaration expanded
+
+const user5 = {
+  tag: 'jglucke',
+  stats: {
+    followers: 5258,
+    views: 478,
+    likes: 1356,
+  },
+};
+const {
+  tag,
+  stats: { followers: userFollowers, views: userViews },
+} = user5;
+
+console.log([tag, userFollowers, userViews]);
+
+user5.stats.followers = 10000;
+console.log(user5);
+console.log(userFollowers);
+
+//destructuration arrays
+const colors = [255, 255, 100];
+const [red, green, blue] = colors;
+console.log(red, green, blue);
+
+//destructuration
+
+// function foo(param1, param2, param3 = 10, param4 = { level: 1 }) {
+// //does magic
+// }
+function foo({
+  param1,
+  param2,
+  param3 = 10,
+  param4 = { level: 1 },
+  param5 = 12,
+}) {}
+foo({ param1: 15, param2: 'test', param3: 32, param4: { level: 0 } });
+foo({ param1: 10, param2: 'test' });
+foo({ param1: 30, param2: 'mode', param3: 15 });
+
+//n times 354 files, 15 projects
